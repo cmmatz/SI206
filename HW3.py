@@ -16,11 +16,11 @@ if debug:
 
 tokens = text2[0:150]
 
-print("TOKENS")
-print(tokens)
+# print("TOKENS")
+# print(tokens)
 tagged_tokens = nltk.pos_tag(tokens) # gives us a tagged list of tuples
-print("TAGGED TOKENS")
-print(tagged_tokens)
+# print("TAGGED TOKENS")
+# print(tagged_tokens)
 if debug:
 	print ("First few tagged tokens are:")
 	for tup in tagged_tokens[:5]:
@@ -65,13 +65,14 @@ for b in link:
 		b["src"] = 'https://v.cdn.vine.co/v/avatars/6DC374D0-DC74-409F-BDA3-612F1B7483EB-647-0000003BE673C9DD.jpg?versionId=9Ddn9Ozq9kB2wzNvzxO8px.QFPd7I_rh'
 		print (b["src"])
 
-#Come back to this
 for b in link: 
 	href = b["src"]
 	if not href.startswith("https:"):
 		print ("before changing", b["src"])
-		b["src"] = 'media/logo2.png'
+		b["src"] = 'logo.png'
+		print (b["src"])
 
+result = str(soup)
 
 element = soup.prettify()
 htmlcode = re.sub('student', 'AMAZING student', element)
