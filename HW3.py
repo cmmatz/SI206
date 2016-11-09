@@ -56,33 +56,29 @@ baseurl = 'http://collemc.people.si.umich.edu/data/bshw3StarterFile.html'
 q = requests.get(baseurl)
 soup = BeautifulSoup(q.text, 'html.parser')
 
-word = soup.find_all('p')
-for elm in word:
-	element = elm.text
-	sentence = re.findall('\\bstudent\\b', element)
-	print (sentence)
-	element = re.sub('\\bstudent\\b', 'AMAZING student', element)
-	print (element)
-
 link = soup.find_all ('img')
 
 for b in link:
 	href = b["src"]
 	if (href) == 'https://testbed.files.wordpress.com/2012/09/bsi_exposition_041316_192.jpg':
 		print (href)
-		b["src"] = 'https://www.whitehouse.gov/sites/whitehouse.gov/files/images/Administration/People/president_official_portrait_hires.jpg'
+		b["src"] = 'https://v.cdn.vine.co/v/avatars/6DC374D0-DC74-409F-BDA3-612F1B7483EB-647-0000003BE673C9DD.jpg?versionId=9Ddn9Ozq9kB2wzNvzxO8px.QFPd7I_rh'
 		print (b["src"])
 
+#Come back to this
 for b in link: 
 	href = b["src"]
 	if not href.startswith("https:"):
 		print ("before changing", b["src"])
-		b["src"] = 'https://github.com/cmmatz/SI206/blob/master/HW3-StudentCopy/media/logo.png'
+		b["src"] = 'media/logo2.png'
 
-end = str(soup)
+
+element = soup.prettify()
+htmlcode = re.sub('student', 'AMAZING student', element)
+
 
 f = open('project.html', 'w')
-f.write(end)
+f.write(htmlcode)
 f.close()
 #Part C
 import tweepy
