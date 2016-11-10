@@ -3,7 +3,7 @@ import nltk
 import random
 
 # import nltk
-nltk.download('punkt')
+.download('punkt')
 
 from nltk import word_tokenize,sent_tokenize
 from nltk.book import text2
@@ -113,7 +113,7 @@ consumer_secret = "BButKTpPh3mMDFJicgNqgLoRTW6WfhyBLpaRO8bGh406awUuwF"
 auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
 auth.set_access_token(access_token,access_token_secret)
 
-= tweepy.API(auth)
+api = tweepy.API(auth)
 
 public_tweets = api.search('Trump')
 
