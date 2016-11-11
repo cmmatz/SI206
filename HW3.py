@@ -3,7 +3,7 @@ import nltk
 import random
 
 # import nltk
-.download('punkt')
+nltk.download('punkt')
 
 from nltk import word_tokenize,sent_tokenize
 from nltk.book import text2
@@ -72,10 +72,11 @@ for b in link:
 		b["src"] = 'logo.png'
 		print (b["src"])
 
-result = str(soup)
+ = str(soup)
 
 element = soup.prettify()
 htmlcode = re.sub('student', 'AMAZING student', element)
+htmlcode = re.sub('students', 'AMAZING students', element)
 
 
 f = open('project.html', 'w')
