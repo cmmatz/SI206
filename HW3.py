@@ -2,6 +2,7 @@
 import nltk
 import random
 
+print("START*******")
 # import nltk
 nltk.download('punkt')
 
@@ -46,7 +47,7 @@ for (word, tag) in tagged_tokens:
 		final_words.append(spaced(new_word))
 
 print ("".join(final_words))
-
+print("\n\nEND*******")
 #Part B
 import requests
 from bs4 import BeautifulSoup
@@ -72,7 +73,7 @@ for b in link:
 		b["src"] = 'logo.png'
 		print (b["src"])
 
- = str(soup)
+result = str(soup)
 
 element = soup.prettify()
 htmlcode = re.sub('student', 'AMAZING student', element)
