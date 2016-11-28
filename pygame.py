@@ -1,4 +1,4 @@
-mport sys, pygame
+import sys, pygame
 pygame.init()
 
 size = width, height = 600, 600
@@ -17,6 +17,7 @@ def moveX(x,y):
 
 def moveO(x,y):
 	screen.blit(Oh, (x,y))
+
 
 
 while 1:
